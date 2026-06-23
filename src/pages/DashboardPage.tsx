@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Grid, Paper, Box, Button, TextField } from '@mui/material';
+import { Typography, Grid, Paper, Box, Button } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { format } from 'date-fns';
 import { useAuth } from '../contexts/AuthContext';
@@ -102,7 +102,7 @@ const DashboardPage: React.FC = () => {
 
   return (
     <Paper sx={{ p: 3 }}>
-      <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Typography variant="h4">Resumen Patinaje</Typography>
         <Button variant="contained" onClick={handleExport} disabled={!summary}>
           Exportar a Excel
@@ -119,7 +119,7 @@ const DashboardPage: React.FC = () => {
       {error && <Typography color="error" sx={{ mt: 2 }}>{error}</Typography>}
       
       {summary && (
-        <Box mt={4}>
+        <Box sx={{ mt: 4 }}>
           <Typography variant="h5" gutterBottom>Resumen del Día</Typography>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
