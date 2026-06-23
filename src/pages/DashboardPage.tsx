@@ -51,9 +51,9 @@ const DashboardPage: React.FC = () => {
     setError('');
     try {
       const formattedDate = format(date, 'yyyy-MM-dd');
-      const { data } = await api.get('/reservations/patines/day-summary', {
-        params: { date: formattedDate },
-      });
+      const url = `/reservations/patines/day-summary?date=${formattedDate}`;
+      console.log(`Fetching data from: ${url}`);
+      const { data } = await api.get(url);
       setSummary(data);
     } catch (err) {
       console.error('Failed to fetch summary', err);

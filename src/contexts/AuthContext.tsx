@@ -15,7 +15,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Create a dedicated axios instance
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: 'http://localhost:3500',
 });
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setPinValidated(true);
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/auth/login`, {
+      const response = await axios.post(`http://localhost:3500/auth/login`, {
         email: 'admin@test.com',
         password: 'Admin12',
       });
