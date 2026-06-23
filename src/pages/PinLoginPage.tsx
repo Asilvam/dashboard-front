@@ -49,7 +49,12 @@ const PinLoginPage: React.FC = () => {
           margin="normal"
           value={pin}
           onChange={(e) => setPin(e.target.value)}
-          inputProps={{ style: { textAlign: 'center', letterSpacing: '0.2em' } }}
+          sx={{
+          '& .MuiInputBase-input': {
+            textAlign: 'center',
+            letterSpacing: '0.2em',
+          },
+        }}
         />
         
         <Button
