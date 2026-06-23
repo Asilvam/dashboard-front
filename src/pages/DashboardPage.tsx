@@ -122,13 +122,13 @@ const DashboardPage: React.FC = () => {
         <Box sx={{ mt: 4 }}>
           <Typography variant="h5" gutterBottom>Resumen del Día</Typography>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={6}>
+         <Grid size={{ xs: 12, md: 6 }}>
               <Paper variant="outlined" sx={{ p: 2, height: '100%' }}>
                 <Typography variant="h6" color="text.secondary">Total de Personas</Typography>
                 <Typography variant="h3">{summary.resumenDelDia.totalPersonasDia}</Typography>
               </Paper>
             </Grid>
-            <Grid item xs={12} md={6}>
+      <Grid size={{ xs: 12, md: 6 }}>
               <Paper variant="outlined" sx={{ p: 2 }}>
                 <Typography variant="h6" color="text.secondary">Distribución de Tallas</Typography>
                 {summary.resumenDelDia.resumenTallasGeneral.length > 0 ? (
